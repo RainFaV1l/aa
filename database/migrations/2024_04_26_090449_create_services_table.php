@@ -18,7 +18,7 @@ return new class extends Migration
             $table->float('price')->nullable()->default(null);
             $table->float('price_from')->nullable()->default(null);
             $table->float('price_up_to')->nullable()->default(null);
-            $table->foreignId('service_category_id')->constrained();
+            $table->foreignId('service_category_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

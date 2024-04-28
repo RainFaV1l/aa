@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('founders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->constrained();
+            $table->foreignId('users_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('image_path')->nullable();

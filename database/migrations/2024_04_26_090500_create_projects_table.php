@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('preview_path');
             $table->float('price')->default(0);
-            $table->foreignId('project_category_id')->constrained();
-            $table->foreignId('service_id')->constrained();
+            $table->foreignId('project_category_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('service_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->boolean('visibility')->default(false);
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();

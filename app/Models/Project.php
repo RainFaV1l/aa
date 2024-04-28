@@ -27,7 +27,7 @@ class Project extends Model
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(ProjectCategory::class);
+        return $this->belongsTo(ProjectCategory::class, 'project_category_id');
     }
 
     public function images(): \Illuminate\Database\Eloquent\Relations\hasMany
