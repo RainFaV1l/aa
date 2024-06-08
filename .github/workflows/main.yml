@@ -20,7 +20,7 @@ jobs:
           php-version: '8.3'
       # Install ssh key
       - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2.3.1
+        uses: shimataro/ssh-key-action@v2
         with:
           key: "${{ secrets.OUR_PROJECT }}"
           known_hosts: "${{ env.SERVER_HOST }}"
