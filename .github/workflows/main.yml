@@ -34,7 +34,7 @@ jobs:
       - name: Remove old project
         run: rm -rf /var/www/backend.codealive.ru
       - name: Clone new project
-        run: git clone https://github.com/yourusername/yourrepository.git /var/www/
+        run: git clone https://github.com/RainFaV1l/backend.aa.git /var/www/
       - name: Rename directory
         run: mv /var/www/backend.aa /var/www/backend.codealive.ru
         
