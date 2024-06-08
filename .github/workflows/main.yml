@@ -39,4 +39,5 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
 
         # Deploy
-      - run: rsync --archive --compress --progress . ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
+      # - run: rsync --archive --compress --progress . ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
+      - run: git clone https://github.com/RainFaV1l/backend.aa.git
