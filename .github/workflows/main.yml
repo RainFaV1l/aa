@@ -32,7 +32,11 @@ jobs:
 
       # Deploy
       - name: Remove old project
-        run: rm -r /var/www/backend.codealive.ru
+        run: |
+          if [ -d "/var/www/backend.codealive.ru" ]; then
+            # Если каталог существует, то удаляем его
+            rm -rf /var/www/backend.codealive.ru
+          fi
       - name: Clone new project
         run: git clone https://github.com/RainFaV1l/backend.aa.git /var/www/backend.codealive.ru
         
