@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Api\v1;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
-class ProjectCategoryResource extends JsonResource
+class TechnologyResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,6 +18,8 @@ class ProjectCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'description' => $this->description,
+            'image_path' => asset(Storage::url($this->image_path)),
         ];
     }
 }

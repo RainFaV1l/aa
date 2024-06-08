@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1;
 
-use App\Http\Resources\ProjectResource;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\v1\ProjectResource;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -13,5 +14,11 @@ class ProjectController extends Controller
         $projects = Project::all();
         // Возвращение ресурса с проектами
         return ProjectResource::collection($projects);
+    }
+
+    public function show(Project $project) : ProjectResource
+    {
+        // Возвращение ресурса с проектами
+        return new ProjectResource($project);
     }
 }

@@ -2,16 +2,18 @@
 
 declare(strict_types=1);
 
-namespace App\MoonShine\Pages\ProjectCategory;
+namespace App\MoonShine\Pages\Technology;
 
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\TinyMce;
 use MoonShine\Pages\Crud\FormPage;
 use MoonShine\Components\MoonShineComponent;
 use MoonShine\Fields\Field;
+use MoonShine\Fields\Image;
 use Throwable;
 
-class ProjectCategoryFormPage extends FormPage
+class TechnologyFormPage extends FormPage
 {
     /**
      * @return list<MoonShineComponent|Field>
@@ -19,8 +21,10 @@ class ProjectCategoryFormPage extends FormPage
     public function fields(): array
     {
         return [
-            ID::make(),
-            Text::make('Название', 'name'),
+            ID::make()->sortable(),
+            Text::make('Название', 'name')->sortable(),
+            TinyMce::make('Описание', 'description'),
+            Image::make('Изображение', 'image_path')->disk('public')->dir('technology/images'),
         ];
     }
 

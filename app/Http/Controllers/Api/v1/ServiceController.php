@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1;
 
-use App\Http\Resources\ServiceResource;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\v1\ServiceResource;
 use App\Models\Service;
 
 class ServiceController extends Controller

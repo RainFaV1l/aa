@@ -9,6 +9,7 @@ use App\MoonShine\Resources\ProjectImageResource;
 use App\MoonShine\Resources\ProjectResource;
 use App\MoonShine\Resources\ServiceCategoryResource;
 use App\MoonShine\Resources\ServiceResource;
+use App\MoonShine\Resources\TechnologyResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
@@ -60,6 +61,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuGroup::make('Услуги', [
                 MenuItem::make('Категории', new ServiceCategoryResource(), 'heroicons.tag'),
                 MenuItem::make('Услуги', new ServiceResource(), 'heroicons.clipboard-document-list'),
+                MenuItem::make('Технологии', new TechnologyResource(), 'laravel'),
             ], 'heroicons.adjustments-horizontal'),
 
             MenuGroup::make('Проекты', [

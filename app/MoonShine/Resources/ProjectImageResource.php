@@ -20,7 +20,7 @@ class ProjectImageResource extends ModelResource
 {
     protected string $model = ProjectImage::class;
 
-    protected string $title = 'ProjectImages';
+    protected string $title = 'Изображения проекта';
 
     /**
      * @return list<Page>
@@ -50,7 +50,7 @@ class ProjectImageResource extends ModelResource
             'name' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'project_id ' => 'nullable|integer|exists:projects,id',
-            'image_path ' => 'nullable|image|max:255',
+            'image_path ' => 'nullable|image|max:5120',
         ];
     }
 }

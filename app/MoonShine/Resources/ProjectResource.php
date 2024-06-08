@@ -48,11 +48,22 @@ class ProjectResource extends ModelResource
     {
         return [
             'name' => 'required|string|max:255',
+            'link_to_project' => 'nullable|string|max:255',
+            'link_to_site' => 'nullable|string|max:255',
             'description' => 'required|string',
-            'preview_path' => 'nullable|image|max:255',
+            'preview_path' => 'nullable|image|max:5120',
             'price' => 'required|numeric',
             'visibility' => 'required|boolean',
-            'completed_at' => 'required|date',
+            'completed_at' => 'nullable|date',
+        ];
+    }
+
+    public function search(): array
+    {
+        return [
+            'name',
+            'description',
+            'price',
         ];
     }
 }
