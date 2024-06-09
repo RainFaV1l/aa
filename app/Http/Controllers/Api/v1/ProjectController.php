@@ -11,7 +11,7 @@ class ProjectController extends Controller
     public function index() : \Illuminate\Http\Resources\Json\AnonymousResourceCollection
     {
         // Получение продуктов
-        $projects = Project::all();
+        $projects = Project::query()->where('visibility', true)->get();
         // Возвращение ресурса с проектами
         return ProjectResource::collection($projects);
     }

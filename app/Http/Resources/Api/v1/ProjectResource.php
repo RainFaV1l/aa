@@ -28,7 +28,7 @@ class ProjectResource extends JsonResource
             'visibility' => $this->visibility,
             'completed_at' => $this->completed_at,
             'images' => ProjectImagesResource::collection($this->images),
-            'technologies' => TechnologyResource::collection($this->technologies),
+            'technologies' => TechnologyResource::collection($this->technologies)
         ];
     }
 }
