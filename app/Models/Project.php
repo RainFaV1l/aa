@@ -18,6 +18,8 @@ class Project extends Model
         'service_id',
         'visibility',
         'completed_at',
+        'link_to_site',
+        'link_to_project',
     ];
 
     public function service(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -33,5 +35,10 @@ class Project extends Model
     public function images(): \Illuminate\Database\Eloquent\Relations\hasMany
     {
         return $this->hasMany(ProjectImage::class);
+    }
+
+    public function technologies(): \Illuminate\Database\Eloquent\Relations\belongsToMany
+    {
+        return $this->belongsToMany(Technology::class, 'project_stacks', 'project_id', 'technology_id');
     }
 }
