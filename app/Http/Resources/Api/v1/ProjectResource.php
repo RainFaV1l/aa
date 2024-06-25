@@ -20,6 +20,7 @@ class ProjectResource extends JsonResource
             'name' => $this->name,
             'link_to_project' => $this->link_to_project,
             'link_to_site' => $this->link_to_site,
+            'short_description' => $this->short_description,
             'description' => $this->description,
             'preview_path' => asset(Storage::url($this->preview_path)),
             'price' => $this->price,

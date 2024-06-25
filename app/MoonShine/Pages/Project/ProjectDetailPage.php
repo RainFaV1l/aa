@@ -7,10 +7,12 @@ namespace App\MoonShine\Pages\Project;
 use App\MoonShine\Resources\ProjectCategoryResource;
 use App\MoonShine\Resources\ProjectImageResource;
 use App\MoonShine\Resources\ServiceResource;
+use App\MoonShine\Resources\TechnologyResource;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Relationships\BelongsTo;
+use MoonShine\Fields\Relationships\BelongsToMany;
 use MoonShine\Fields\Relationships\HasMany;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
@@ -33,6 +35,7 @@ class ProjectDetailPage extends DetailPage
             Text::make('Ссылка на сайт', 'link_to_site'),
             Text::make('Краткое описание', 'short_description'),
             Text::make('Описание', 'description'),
+            BelongsToMany::make('Технологический стек', 'technologies', resource: new TechnologyResource())->creatable()->searchable(),
             Image::make('Изображение', 'preview_path')->disk('public')->dir('project/images'),
             Number::make('Стоимость', 'price'),
             BelongsTo::make('Категория', 'category', fn($item) => $item->name, resource: new ProjectCategoryResource()),

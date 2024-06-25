@@ -23,6 +23,8 @@ class TechnologyResource extends ModelResource
 
     protected string $title = 'Технологии';
 
+    protected string $column = 'name';
+
     /**
      * @return list<Page>
      */

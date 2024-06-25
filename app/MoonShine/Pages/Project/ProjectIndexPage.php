@@ -27,8 +27,6 @@ class ProjectIndexPage extends IndexPage
         return [
             ID::make()->sortable(),
             Text::make('Название', 'name')->sortable(),
-            Text::make('Ссылка на проект', 'link_to_project'),
-            Text::make('Ссылка на сайт', 'link_to_site'),
             Image::make('Изображение', 'preview_path')->disk('public')->dir('project/images'),
             Number::make('Стоимость', 'price'),
             BelongsTo::make('Категория', 'category', fn($item) => $item->name, resource: new ProjectCategoryResource()),

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectStack extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'project_id',
+        'technology_id',
+    ];
 }

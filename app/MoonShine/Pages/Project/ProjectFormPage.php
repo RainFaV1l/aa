@@ -7,6 +7,7 @@ namespace App\MoonShine\Pages\Project;
 use App\MoonShine\Resources\ProjectCategoryResource;
 use App\MoonShine\Resources\ProjectImageResource;
 use App\MoonShine\Resources\ServiceResource;
+use App\MoonShine\Resources\TechnologyResource;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
@@ -38,7 +39,8 @@ class ProjectFormPage extends FormPage
             Number::make('Стоимость', 'price'),
             BelongsTo::make('Категория', 'category', fn($item) => $item->name, resource: new ProjectCategoryResource())->searchable(),
             BelongsTo::make('Услуга', 'service', fn($item) => $item->name, resource: new ServiceResource())->searchable(),
-            HasMany::make('Изображения', 'images', resource: new ProjectImageResource())->creatable() ,
+            HasMany::make('Изображения', 'images', resource: new ProjectImageResource())->creatable(),
+            BelongsToMany::make('Технологический стек', 'technologies', resource: new TechnologyResource())->creatable()->searchable(),
             Switcher::make('Опубликован', 'visibility'),
             Text::make('Дата завершения', 'completed_at'),
         ];
